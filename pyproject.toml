@@ -1,0 +1,66 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "minelauncher"
+version = "0.2.0"
+description = "Неофициальный Minecraft Launcher с поддержкой модлоадеров (Fabric, Forge, Quilt, NeoForge)"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    { name = "MineLauncher" }
+]
+keywords = ["minecraft", "launcher", "fabric", "forge", "quilt", "neoforge"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Games/Entertainment",
+]
+
+dependencies = [
+    "minecraft-launcher-lib>=8.0",
+    "customtkinter>=5.2",
+    "typer[all]>=0.9",
+    "pydantic-settings>=2.0",
+    "tomli>=2.0; python_version < '3.11'",
+    "tomli-w>=1.0",
+    "tqdm>=4.65",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff",
+    "mypy",
+    "pytest",
+]
+
+[project.scripts]
+mc-launcher = "mc_launcher.cli.main:app"
+
+[project.urls]
+Homepage = "https://github.com/yourname/MineLauncher"
+Repository = "https://github.com/yourname/MineLauncher"
+
+[tool.hatch.build.targets.wheel]
+packages = ["mc_launcher"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true

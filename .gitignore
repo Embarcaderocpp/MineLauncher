@@ -1,0 +1,12 @@
+# .gitignore
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+*.log
+*.gz
+instances/*/libraries/
+instances/*/versions/
+instances/*/saves/
+instances/
+temp_install/

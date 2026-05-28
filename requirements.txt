@@ -1,0 +1,7 @@
+minecraft-launcher-lib==8.*
+customtkinter
+typer
+pydantic-settings
+tomli
+tomli-w
+tqdm
